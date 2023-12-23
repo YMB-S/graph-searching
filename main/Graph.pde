@@ -8,7 +8,7 @@ public class Graph {
   
   public Graph(int xOffset, int yOffset) {
     
-    Node a, b, c, d, e, f, g, h, i, j, k, l;
+    Node a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p;
     
     a = new Node(400 + xOffset, 100 + yOffset, "A", nodeSize);
     
@@ -26,7 +26,13 @@ public class Graph {
     j = new Node(300 + xOffset, 300 + yOffset, "J", nodeSize);
     k = new Node(300 + xOffset, 350 + yOffset, "K", nodeSize);
     
-    l = new Node(550 + xOffset, 350 + yOffset, "L", nodeSize);
+    l = new Node(600 + xOffset, 350 + yOffset, "L", nodeSize);
+    
+    m = new Node(200 + xOffset, 350 + yOffset, "M", nodeSize);
+    n = new Node(550 + xOffset, 350 + yOffset, "N", nodeSize);
+    o = new Node(400 + xOffset, 250 + yOffset, "O", nodeSize);
+    
+    p = new Node(300 + xOffset, 400 + yOffset, "P", nodeSize);
     
     a.connect(b);
     a.connect(c);
@@ -38,15 +44,22 @@ public class Graph {
     d.connect(g);
     g.connect(h);
     g.connect(i);
+    g.connect(o);
     i.connect(h);
     
     f.connect(j);
     j.connect(k);
-    
+    k.connect(o);
+    h.connect(n);
     h.connect(l);
     
+    m.connect(j);
+    o.connect(b);
+    
+    p.connect(k);
+    
     nodes = new Node[] {
-      a, b, c, d, e, f, g, h, i, j, k, l
+      a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p
     };
   }
   

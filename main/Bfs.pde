@@ -2,7 +2,7 @@ public class Bfs extends SearchBase {
   
   public Bfs() {
     super();
-    super.graph = new Graph(-100, -50);
+    super.graph = new Graph(-150, -50);
   }
 
   public void step(String targetValue) {
@@ -15,6 +15,7 @@ public class Bfs extends SearchBase {
     if (currentNode.value == targetValue) {
       // We no longer have to visit any nodes - clear the queue and exit
       toVisit.clear();
+      outputPathTaken(targetValue);
       return;
     }
     
@@ -22,11 +23,17 @@ public class Bfs extends SearchBase {
     for (Node adj : currentNode.adjacencies) {
       if (!visited.contains(adj)) {
         toVisit.add(adj);
+        previousNodes.put(adj, currentNode);
       }
     }
     
     // Make sure we don't visit this node again ad infinitum
     visited.add(currentNode);
+  }
+  
+  void outputPathTaken(String targetValue) {
+    print("BFS:");
+    super.outputPathTaken(targetValue);
   }
   
   public void doDraw(String targetValue) {
@@ -35,8 +42,9 @@ public class Bfs extends SearchBase {
       step(targetValue);
     }
     else {
-      print("Found target: " + targetValue);
-      super.graph.getForValue(targetValue).state = NodeState.FOUND;
+      //print("Found target: " + targetValue);
+      
+      
     }
     
     // Draw the updated graph

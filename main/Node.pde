@@ -25,7 +25,7 @@ public class Node {
     colors.put(NodeState.UNVISITED,   new int[]{0, 0, 0});
     colors.put(NodeState.CURRENT,     new int[]{255, 0, 255});
     colors.put(NodeState.VISITED,     new int[]{180, 180, 180});
-    colors.put(NodeState.PATH_TAKEN,  new int[]{200, 0, 0});
+    colors.put(NodeState.PATH_TAKEN,  new int[]{0, 150, 0});
     colors.put(NodeState.FOUND,       new int[]{0, 255, 0});
     
     state = NodeState.UNVISITED;
@@ -34,7 +34,6 @@ public class Node {
   public void connect(Node other){
     this.addAdjacency(other);
     other.addAdjacency(this);
-    
   }
   
   public void addAdjacency(Node other){
@@ -55,6 +54,10 @@ public class Node {
      
      fill(255);
      text(value, x, y);
+  }
+  
+  public String toString() {
+    return (this.value); 
   }
 }
 
