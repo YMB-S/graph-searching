@@ -1,13 +1,13 @@
 Bfs bfs;
 Dfs dfs;
 
-String startValue = "P";
-String targetValue = "N";
+String startValue = "A";
+String targetValue = "M";
 
 public void setup() {
   size(500, 800); // For some reason Processing can't deal with variables for the screen size, it needs magic numbers... 
   background(255);
-  frameRate(0.5f);
+  frameRate(1f);
   
   bfs = new Bfs();
   bfs.setStartValue(startValue);

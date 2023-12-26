@@ -30,7 +30,7 @@ public class Graph {
     
     m = new Node(200 + xOffset, 350 + yOffset, "M", nodeSize);
     n = new Node(550 + xOffset, 350 + yOffset, "N", nodeSize);
-    o = new Node(400 + xOffset, 250 + yOffset, "O", nodeSize);
+    o = new Node(550 + xOffset, 400 + yOffset, "O", nodeSize);
     
     p = new Node(300 + xOffset, 400 + yOffset, "P", nodeSize);
     
@@ -40,23 +40,25 @@ public class Graph {
 
     b.connect(e);
     b.connect(f);
+    //b.connect(o);
     
     d.connect(g);
     g.connect(h);
     g.connect(i);
-    g.connect(o);
+    //g.connect(o);
     i.connect(h);
     
     f.connect(j);
     j.connect(k);
-    k.connect(o);
+    //k.connect(o);
     h.connect(n);
     h.connect(l);
     
     m.connect(j);
-    o.connect(b);
+    o.connect(n);
     
     p.connect(k);
+    //p.connect(o);
     
     nodes = new Node[] {
       a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p
